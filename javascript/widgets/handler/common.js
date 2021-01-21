@@ -940,19 +940,26 @@ firebaseui.auth.widget.handler.common.isPhoneProviderOnly = function(app) {
 firebaseui.auth.widget.handler.common.handleSignInStart = function(
     app, container, email = undefined, infoBarMessage = undefined) {
   if (firebaseui.auth.widget.handler.common.isPasswordProviderOnly(app)) {
-    if (infoBarMessage) {
-      firebaseui.auth.widget.handler.handle(
-          firebaseui.auth.widget.HandlerName.SIGN_IN,
-          app,
-          container,
-          email,
-          infoBarMessage);
-    } else {
-      // Email auth provider is the only option, trigger that flow immediately
-      // instead of just showing a single sign-in with email button.
-      firebaseui.auth.widget.handler.common.handleSignInWithEmail(
-          app, container, email);
-    }
+    // if (infoBarMessage) {
+    //   firebaseui.auth.widget.handler.handle(
+    //       firebaseui.auth.widget.HandlerName.SIGN_IN,
+    //       app,
+    //       container,
+    //       email,
+    //       infoBarMessage);
+    // } else {
+    //   // Email auth provider is the only option, trigger that flow immediately
+    //   // instead of just showing a single sign-in with email button.
+    //   firebaseui.auth.widget.handler.common.handleSignInWithEmail(
+    //       app, container, email);
+    // }
+    // trigger password sign in with both email and password fields
+    firebaseui.auth.widget.handler.handle(
+      firebaseui.auth.widget.HandlerName.PASSWORD_SIGN_IN,
+      app,
+      container,
+      email,
+      infoBarMessage);
   } else if (
       app && firebaseui.auth.widget.handler.common.isPhoneProviderOnly(app) &&
       !infoBarMessage) {
