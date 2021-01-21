@@ -1,5 +1,5 @@
 {
-  "name": "firebaseui",
+  "name": "firebaseui-fork",
   "version": "4.7.1",
   "description": "Javascript library for customizable UI on top of Firebase SDK",
   "files": [
@@ -32,9 +32,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/firebase/firebaseui-web.git"
-  },
-  "publishConfig": {
-    "registry": "https://wombat-dressing-room.appspot.com"
   },
   "license": "Apache-2.0",
   "devDependencies": {
